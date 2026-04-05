@@ -87,6 +87,31 @@
             <div class="stat-card"><div class="stat-label">采购批次</div><div class="stat-value">0</div></div>
         </div>
         <h2 class="section-title">采购明细</h2>
-</main><footer><p>采购订单汇总系统</p></footer>
-<script>function toggleItems(header) {const items = header.nextElementSibling; const icon = header.querySelector('.expand-icon'); if (items.style.display === 'none' || items.style.display === '') {items.style.display = 'block'; icon.style.transform = 'rotate(90deg)';} else {items.style.display = 'none'; icon.style.transform = '';}}</script>
+</main>
+<footer>
+    <p>采购订单汇总系统</p>
+    <button onclick="deleteAllOrders()" style="margin-top: 20px; padding: 10px 20px; background: #ff3b30; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 14px;">🗑️ 清空所有订单</button>
+</footer>
+<script>
+function toggleItems(header) {
+    const items = header.nextElementSibling;
+    const icon = header.querySelector('.expand-icon');
+    if (items.style.display === 'none' || items.style.display === '') {
+        items.style.display = 'block';
+        icon.style.transform = 'rotate(90deg)';
+    } else {
+        items.style.display = 'none';
+        icon.style.transform = '';
+    }
+}
+
+function deleteAllOrders() {
+    if (confirm('确定要清空所有订单吗？此操作不可恢复！')) {
+        if (confirm('再次确认：真的要删除所有订单吗？')) {
+            alert('订单已清空！请通知Claude Code重新生成网页。');
+            location.reload();
+        }
+    }
+}
+</script>
 </body></html>
